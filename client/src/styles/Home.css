@@ -1,0 +1,197 @@
+/* Layout */
+.home-container {
+  text-align: center;
+  padding: 3rem;
+  background-color: #e8e8e8;
+  min-height: 100vh;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.home-title {
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size */
+  margin-bottom: 3rem;
+  color: #393e7f;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem; /* Added padding for smaller screens */
+}
+
+/* From Uiverse.io by Creatlydev */
+.card {
+  width: min(300px, 90vw); /* Responsive width, max 300px or 90% of viewport */
+  margin: auto;
+  background-color: #f4f5f2;
+  text-align: center;
+  border-top-left-radius: 4rem;
+  border: 2px solid #fff;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: clamp(100px, 30vw, 120px); /* Responsive width */
+  background-color: #393e7f;
+  top: 31px;
+  right: -2.5px;
+  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.card__body {
+  padding: 3rem 1.5rem;
+  max-width: 25ch;
+  margin: auto;
+}
+
+.card__title {
+  font-weight: 800;
+  color: #121513;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+  margin-block: 1.5rem 0.75rem;
+}
+
+.card__paragraph {
+  color: #303830;
+  font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
+}
+
+.card__ribbon {
+  margin-top: 2rem;
+  display: grid;
+  place-items: center;
+  height: 50px;
+  background-color: #393e7f;
+  position: relative;
+  width: 110%;
+  left: -5%;
+  top: 10px;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.card__ribbon::after,
+.card__ribbon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1/1;
+  bottom: 100%;
+  z-index: -2;
+  background-color: #191c39;
+}
+
+.card__ribbon::before {
+  left: 0;
+  transform-origin: left bottom;
+  transform: rotate(45deg);
+}
+
+.card__ribbon::after {
+  right: 0;
+  transform-origin: right bottom;
+  transform: rotate(-45deg);
+}
+
+.card__ribbon-label {
+  display: block;
+  width: clamp(70px, 20vw, 84px); /* Responsive size */
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  position: relative;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 8px solid #393e7f;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  line-height: 1;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+}
+
+.card__ribbon-label::before,
+.card__ribbon-label::after {
+  content: "";
+  position: absolute;
+  width: clamp(20px, 6vw, 25px); /* Responsive size */
+  height: clamp(20px, 6vw, 25px);
+  bottom: 50%;
+}
+
+.card__ribbon-label::before {
+  right: calc(100% + 4px);
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 0 #393e7f;
+}
+
+.card__ribbon-label::after {
+  left: calc(100% + 4px);
+  border-bottom-left-radius: 20px;
+  box-shadow: -5px 5px 0 #393e7f;
+}
+
+/* Media Queries for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .home-container {
+    padding: rem 0.5rem; /* Reduced padding for tablets */
+  }
+
+  .home-title {
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    width: min(280px, 95vw); /* Slightly smaller cards for tablets */
+  }
+
+  .card__body {
+    padding: 2rem 1rem; /* Adjusted padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem 0.5rem; /* Minimal padding for mobile */
+  }
+
+  .home-title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    width: 90vw; /* Full width for mobile */
+  }
+
+  .card__body {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .card__title {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+  }
+
+  .card__paragraph {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+  }
+
+  .card__ribbon {
+    height: 40px; /* Smaller ribbon for mobile */
+    margin-top: 1.5rem;
+  }
+
+  .card__ribbon-label {
+    width: clamp(60px, 18vw, 70px);
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+}

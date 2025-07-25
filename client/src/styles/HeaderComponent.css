@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  color: #1976d2;
+  font-size: 32px !important;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.nav-links,
+.auth-buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a,
+.auth-buttons a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1976d2;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #1976d2;
+  border: 1px solid #1976d2;
+}
+
+.signup-btn {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #f1f8ff;
+}
+
+.signup-btn:hover {
+  background-color: #115293;
+}
+.logout-btn {
+  background-color: #ff5e57;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e04e49;
+}
+
+/* Force hide hamburger on desktop */
+.menu-icon {
+  display: none !important;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline-flex !important;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    color: #1976d2;
+  }
+
+  .mobile-menu {
+    width: 250px;
+    padding: 20px;
+  }
+
+  .close-icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+  
